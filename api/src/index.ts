@@ -11,4 +11,4 @@ mongoose
       console.log('🔥 Server is running!');
     });
   })
-  .catch((err) => console.log(err));
+  .catch(() => console.log('Erro ao conectar ao mongoDb'));
