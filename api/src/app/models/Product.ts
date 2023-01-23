@@ -11,7 +11,7 @@ export const Product = model(
       type: String,
       required: true,
     },
-    imagePath: {
+    image: {
       type: String,
       required: true,
     },
