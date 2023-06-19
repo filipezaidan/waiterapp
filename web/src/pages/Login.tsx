@@ -37,6 +37,7 @@ const Form = () => {
                 <InputForm
                     name="password"
                     label="Senha"
+                    type="password"
                     placeholder="Inform sua senha"
                     register={register}
                 />

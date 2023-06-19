@@ -1,4 +1,5 @@
 import { FieldValues, UseFormRegister } from "react-hook-form";
+// import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 interface InputForm {
     name: string;
@@ -13,6 +14,7 @@ export const InputForm = ({
     label,
     type = "text",
     placeholder,
+
     register,
 }: InputForm) => {
     return (
@@ -21,13 +23,21 @@ export const InputForm = ({
                 {label}
             </label>
             {/* TODO: change border color */}
-            <input
-                type={type}
-                className="w-full p-4 rounded-lg border border-gray-200 "
-                placeholder={placeholder}
-                required
-                {...register(name)}
-            />
+            <div className="relative">
+                <input
+                    type={type}
+                    className="w-full p-4 rounded-lg border border-gray-200 "
+                    placeholder={placeholder}
+                    required
+                    {...register(name)}
+                />
+                {/* TODO: implement icon "eye" when the input is password type */}
+                {/* {type === "password" && (
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                        <AiOutlineEye size={30} color="#666666" />
+                    </div>
+                )} */}
+            </div>
         </div>
     );
 };
