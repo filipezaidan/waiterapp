@@ -1,5 +1,8 @@
+import { SubmitHandler, useForm } from "react-hook-form";
+
 import { Button } from "../components/Button";
 import { InputForm } from "../components/Input";
+import { IFormInput } from "../@types/Login";
 
 const Header = () => {
     return (
@@ -14,12 +17,30 @@ const Header = () => {
 };
 
 const Form = () => {
+    const { register, handleSubmit } = useForm();
+
+    const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
+
     return (
-        <form className=" w-96 h-auto items-center justify-center">
+        <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="w-96 h-auto items-center justify-center"
+        >
             <div className="flex flex-col w-96 gap-8">
-                <InputForm label="Email" placeholder="Seu e-mail de acesso" />
-                <InputForm label="Senha" placeholder="Inform sua senha" />
-                <Button>Login</Button>
+                <InputForm
+                    name="email"
+                    type="email"
+                    label="Email"
+                    placeholder="Seu e-mail de acesso"
+                    register={register}
+                />
+                <InputForm
+                    name="password"
+                    label="Senha"
+                    placeholder="Inform sua senha"
+                    register={register}
+                />
+                <Button type="submit">Login</Button>
             </div>
         </form>
     );
