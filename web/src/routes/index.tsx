@@ -1,13 +1,13 @@
 import { Routes as Switch, Route } from "react-router-dom";
 import { LoginPage } from "../pages/Login";
-import { SignupPage } from "../pages/Signup";
+import { HomePage } from "../pages/Home";
 
 export const Routes = () => {
     return (
         <Switch>
             {/* TODO: path / from route login page temporaly */}
-            <Route path="/" element={<LoginPage />} />
-            <Route path="/signup" element={<SignupPage />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/login" element={<LoginPage />} />
         </Switch>
     );
 };
