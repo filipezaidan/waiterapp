@@ -14,7 +14,6 @@ export const InputForm = ({
     label,
     type = "text",
     placeholder,
-
     register,
 }: InputForm) => {
     return (

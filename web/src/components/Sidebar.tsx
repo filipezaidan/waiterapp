@@ -4,9 +4,9 @@ const Menus = () => {
     return (
         <nav className="flex w-full flex-col items-center justify-center gap-12">
             <NavItem href="/" title="Home" icon="home" />
-            <NavItem href="/order" title="Histórico" icon="order" />
+            <NavItem href="/orders" title="Histórico" icon="order" />
             <NavItem href="/menu" title="Cardápio" icon="menu" />
-            <NavItem href="#" title="Usuários" icon="users" />
+            <NavItem href="/users" title="Usuários" icon="users" />
         </nav>
     );
 };
@@ -14,7 +14,7 @@ const Menus = () => {
 const ControlUser = () => {
     return (
         <div className="flex w-full flex-col items-center justify-center gap-4">
-            <NavItem href="#" title="Meu perfil" icon="profile" />
+            <NavItem href="/profile" title="Meu perfil" icon="profile" />
             <NavItem href="#" title="Sair" icon="logout" />
         </div>
     );
