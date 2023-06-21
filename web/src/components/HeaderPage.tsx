@@ -9,8 +9,11 @@ export const HeaderPage = ({ title, description, icon }: IHeaderPage) => {
         <div className="flex flex-col gap-4">
             <div className="flex w-full justify-between">
                 <div className="flex item-center gap-3">
-                    {icon}
-                    <span className="text-2xl font-semibold">{title}</span>
+                    <div className="text-gray-800">{icon}</div>
+
+                    <span className="text-2xl text-gray-800 font-semibold">
+                        {title}
+                    </span>
                 </div>
                 {/* <div className="flex item-center justify-start gap-3 text-red-500 text-base font-semibold cursor-pointer">
                     <img src={RefreshIcon} className="w-6 h-6" />

@@ -36,7 +36,9 @@ export const NavItem = ({ title, href, icon = "default" }: INavItem) => {
         >
             {/* TODO: change color icon outline */}
             <img src={icons[icon]} />
-            <a href={href}>{title}</a>
+            <a href={href} className="font-semibold">
+                {title}
+            </a>
         </Link>
     );
 };

@@ -80,7 +80,7 @@ export const OrderPage = () => {
             <HeaderPage
                 title="Histórico"
                 description="Visualize pedidos anteriores"
-                icon={<OrderIcon color="#5e636e" size={35} />}
+                icon={<OrderIcon size={35} />}
             />
             <TableOrders />
         </div>
