@@ -9,23 +9,7 @@ import {
 import { TbReceipt as OrderIcon } from "react-icons/tb";
 import { FiEye as EyeIcon } from "react-icons/fi";
 import { RiDeleteBin6Line as DeleteIcon } from "react-icons/ri";
-
-const Header = () => {
-    return (
-        <div className="flex flex-col gap-4">
-            <div className="flex w-full justify-between">
-                <div className="flex item-center gap-2">
-                    {/* <img src={OrderIcon} className="w-8 h-8 " /> */}
-                    <OrderIcon color="#5e636e" size={35} />
-                    <span className="text-2xl font-semibold">Histórico</span>
-                </div>
-            </div>
-            <span className="text-base font-base font-semibold text-gray-500">
-                Visualize os pedidos anteriores
-            </span>
-        </div>
-    );
-};
+import { HeaderPage } from "components/HeaderPage";
 
 const TableOrders = () => {
     const columns = ["Mesa", "Data", "Nome", "Categoria", "Total", "Ações"];
@@ -93,7 +77,11 @@ const TableOrders = () => {
 export const OrderPage = () => {
     return (
         <div className="flex flex-1 flex-col gap-12">
-            <Header />
+            <HeaderPage
+                title="Histórico"
+                description="Visualize pedidos anteriores"
+                icon={<OrderIcon color="#5e636e" size={35} />}
+            />
             <TableOrders />
         </div>
     );
