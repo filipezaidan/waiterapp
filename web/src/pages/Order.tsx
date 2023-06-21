@@ -6,12 +6,17 @@ import {
     TableTD,
 } from "components/Table";
 
+import { TbReceipt as OrderIcon } from "react-icons/tb";
+import { FiEye as EyeIcon } from "react-icons/fi";
+import { RiDeleteBin6Line as DeleteIcon } from "react-icons/ri";
+
 const Header = () => {
     return (
         <div className="flex flex-col gap-4">
             <div className="flex w-full justify-between">
-                <div className="flex item-center gap-3">
-                    {/* <img src={HomeIcon} className="w-8 h-8 " /> */}
+                <div className="flex item-center gap-2">
+                    {/* <img src={OrderIcon} className="w-8 h-8 " /> */}
+                    <OrderIcon color="#5e636e" size={35} />
                     <span className="text-2xl font-semibold">Histórico</span>
                 </div>
             </div>
@@ -48,27 +53,46 @@ const TableOrders = () => {
         },
     ];
     return (
-        <Table>
-            <TableHead columns={columns} />
-            <TableBody>
-                {data.map((order) => (
-                    <TableRow>
-                        <TableTD>{order.table}</TableTD>
-                        <TableTD>{order.date}</TableTD>
-                        <TableTD>{order.name}</TableTD>
-                        <TableTD>{order.category}</TableTD>
-                        <TableTD>{order.total}</TableTD>
-                        <TableTD>{/* actions in here */}</TableTD>
-                    </TableRow>
-                ))}
-            </TableBody>
-        </Table>
+        <div className="flex flex-col gap-4">
+            <div className="flex w-full items-center gap-2">
+                <h5 className="text-gray-600 font-semibold text-base ">
+                    Pedidos
+                </h5>
+                <div className="px-2 py-1 bg-neutral-200 rounded">
+                    <span>1</span>
+                </div>
+            </div>
+            <Table>
+                <TableHead columns={columns} />
+                <TableBody>
+                    {data.map((order) => (
+                        <TableRow>
+                            <TableTD>{order.table}</TableTD>
+                            <TableTD>{order.date}</TableTD>
+                            <TableTD>{order.name}</TableTD>
+                            <TableTD>{order.category}</TableTD>
+                            <TableTD>{order.total}</TableTD>
+                            <TableTD className="w-36 ">
+                                <div className="flex gap-2 justify-around">
+                                    <button className="">
+                                        <EyeIcon size={20} />
+                                    </button>
+                                    <button>
+                                        <DeleteIcon color="#D73035" size={20} />
+                                    </button>
+                                </div>
+                            </TableTD>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </div>
     );
 };
 
 export const OrderPage = () => {
     return (
-        <div className="flex flex-col flex-1 gap-12">
+        <div className="flex flex-1 flex-col gap-12">
             <Header />
             <TableOrders />
         </div>

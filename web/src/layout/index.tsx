@@ -5,7 +5,7 @@ export const LayoutDashboard = () => {
     return (
         <div className="flex flex-1">
             <Sidebar />
-            <div className="flex flex-1 bg-zinc-100 p-10">
+            <div className="flex flex-1 bg-zinc-100 py-10 pl-10 pr-20">
                 <Outlet />
             </div>
         </div>
